@@ -8,71 +8,14 @@
     <!-- chado genomics - initiates SequenceFeatures, so run first -->
     <source name="knowpulse-genomics" type="legfed-chado-db" dump="true">
       <property name="source.db.name" value="knowpulse-chado"/>
-      <property name="organisms" value="3885"/>
-      <property name="strains" value="G19833"/>
-      <property name="dataSetTitle" value="LIS chado genomics data"/>
-      <property name="dataSourceName" value="LIS chado database"/>
+      <property name="organisms" value="3864"/>
+      <property name="strains" value="CDC_Redberry"/>
+      <property name="dataSetTitle" value="KnowPulse chado genomics data"/>
+      <property name="dataSourceName" value="KnowPulse chado database"/>
       <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
       <property name="processors" value="org.intermine.bio.dataconversion.SequenceProcessor"/>
     </source>
 
-    <!-- chado proteins -->
-    <source name="knowpulse-proteins" type="legfed-chado-db" dump="true">
-      <property name="source.db.name" value="knowpulse-chado"/>
-      <property name="organisms" value="3885"/>
-      <property name="strains" value="G19833"/>
-      <property name="dataSetTitle" value="LIS chado protein data"/>
-      <property name="dataSourceName" value="LIS chado database"/>
-      <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
-      <property name="processors" value="org.intermine.bio.dataconversion.ProteinProcessor"/>
-    </source>
-
-    <!-- chado genetics -->
-    <source name="knowpulse-genetics" type="legfed-chado-db" dump="true">
-      <property name="source.db.name" value="knowpulse-chado"/>
-      <property name="organisms" value="3885"/>
-      <property name="strains" value="G19833"/>
-      <property name="dataSetTitle" value="LIS chado genetics data"/>
-      <property name="dataSourceName" value="LIS chado database"/>
-      <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
-      <property name="processors" value="org.intermine.bio.dataconversion.GeneticProcessor"/>
-    </source>
-
-    <!-- chado featureprop attributes -->
-    <source name="knowpulse-featureprop" type="legfed-chado-db" dump="true">
-      <property name="source.db.name" value="knowpulse-chado"/>
-      <property name="organisms" value="3885"/>
-      <property name="strains" value="G19833"/>
-      <property name="dataSetTitle" value="LIS chado feature properties"/>
-      <property name="dataSourceName" value="LIS chado database"/>
-      <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
-      <property name="processors" value="org.intermine.bio.dataconversion.FeaturePropProcessor"/>
-    </source>
-
-    <!-- chado gene families and resulting homology - based on featureprop -->
-    <source name="knowpulse-genefamilies" type="legfed-chado-db" dump="true">
-      <property name="source.db.name" value="knowpulse-chado"/>
-      <property name="organisms" value="3885"/>
-      <property name="strains" value="G19833"/>
-      <property name="homologue.organisms" value="3920 3847 3880 3885 130453 130454 3827 3827 157791 57577 3914 3821 3871 34305"/>
-      <property name="homologue.strains" value="IT97K-499-35 Williams82 A17 G19833 V14167 K30076 CDCFrontier ICC4958 VC1973A MilvusB Gyeongwon ICPL87119 Tanjil MG20"/>
-      <property name="dataSetTitle" value="LIS chado gene families"/>
-      <property name="dataSourceName" value="LIS chado database"/>
-      <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
-      <property name="processors" value="org.intermine.bio.dataconversion.GeneFamilyProcessor"/>
-    </source>
-
-    <!-- chado + reactome file -->
-    <source name="knowpulse-reactome-file" type="legfed-chado-db" dump="true">
-      <property name="source.db.name" value="knowpulse-chado"/>
-      <property name="reactome.filename" value="/home/shokin/legfed-intermine-data/plant-reactome/gene_ids_by_pathway_and_species.tab"/>
-      <property name="organisms" value="3885"/>
-      <property name="strains" value="G19833"/>
-      <property name="dataSetTitle" value="LIS protein data + plant reactome"/>
-      <property name="dataSourceName" value="LIS chado database"/>
-      <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
-      <property name="processors" value="org.intermine.bio.dataconversion.ReactomeProcessor"/>
-    </source>
 
     <!-- ONTOLOGIES -->
     
@@ -106,22 +49,8 @@
     <post-process name="do-sources" dump="true"/>
 
     <!-- add features -->
-    <post-process name="legfed-create-gene-flanking-regions"/>
-    <post-process name="legfed-create-supercontig-flanking-regions"/>
-    <post-process name="legfed-create-intron-features"/>
     <post-process name="create-intergenic-region-features"/>
 
-    <!-- legfed references and collections -->
-    <post-process name="legfed-create-go-annotations"/>
-    <post-process name="legfed-create-ontology-parent-annotations"/>
-    <post-process name="legfed-create-exon-gene-references"/>
-    <post-process name="legfed-create-protein-gene-references"/>
-    <post-process name="legfed-create-qtl-linkagegroup-references"/>
-    <post-process name="legfed-populate-gene-spanning-qtls"/>
-    <post-process name="legfed-populate-interpro-data"/>
-    <post-process name="legfed-populate-linkagegroup-lengths"/>
-    <post-process name="legfed-populate-publications"/>
-    
     <!-- core references and collections -->
     <post-process name="populate-child-features"/>
     <post-process name="create-references" />
