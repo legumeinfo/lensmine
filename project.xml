@@ -1,7 +1,7 @@
 <project type="bio">
   <property name="target.model" value="genomic"/>
   <property name="common.os.prefix" value="common"/>
-  <property name="intermine.properties.file" value="lentilmine.properties"/>
+  <property name="intermine.properties.file" value="lensmine.properties"/>
   <property name="default.intermine.properties.file" location="../default.intermine.integrate.properties"/>
   <sources>
 
@@ -12,25 +12,20 @@
       <property name="dataSetDescription" value="Lens culinaris organism and strain information." />
       <property name="src.data.dir" location="/data/v2/Lens/culinaris/about_this_collection" />
     </source>
-    <!-- Lens/culinaris/genomes/CDC_Redberry.gnm2.7C5P -->
-    <source name="CDC_Redberry.gnm2.7C5P" type="lis-genome" dump="true">
-      <property name="dataSetUrl" value="https://data.legumeinfo.org/Lens/culinaris/genomes/CDC_Redberry.gnm2.7C5P/" />
-      <property name="lis-genome.className" value="org.intermine.model.bio.Chromosome" />
-      <property name="lis-genome.includes" value="README.CDC_Redberry.gnm2.7C5P.yml,lencu.CDC_Redberry.gnm2.7C5P.genome_main.fna.gz" />
-      <property name="src.data.dir" location="/data/v2/Lens/culinaris/genomes/CDC_Redberry.gnm2.7C5P"/>
-    </source>
-    <!-- Lens/culinaris/annotations/CDC_Redberry.gnm2.ann1.5FB4 -->
-    <source name="CDC_Redberry.gnm2.ann1.5FB4" type="lis-annotation" dump="true">
-      <property name="dataSetUrl" value="https://data.legumeinfo.org/Lens/culinaris/annotations/CDC_Redberry.gnm2.ann1.5FB4/" />
-      <property name="src.data.dir" location="/data/v2/Lens/culinaris/annotations/CDC_Redberry.gnm2.ann1.5FB4"/>
-    </source>
-
     <!-- Lens/ervoides/about_this_collection -->
     <source name="Lens-ervoides-description" type="lis-description" dump="true" >
       <property name="dataSetName" value="Lens/ervoides/about_this_collection" />
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Lens/ervoides/about_this_collection/" />
       <property name="dataSetDescription" value="Lens ervoides organism and strain information." />
       <property name="src.data.dir" location="/data/v2/Lens/ervoides/about_this_collection" />
+    </source>
+
+    <!-- Lens/culinaris/genomes/CDC_Redberry.gnm2.7C5P -->
+    <source name="CDC_Redberry.gnm2.7C5P" type="lis-genome" dump="true">
+      <property name="dataSetUrl" value="https://data.legumeinfo.org/Lens/culinaris/genomes/CDC_Redberry.gnm2.7C5P/" />
+      <property name="lis-genome.className" value="org.intermine.model.bio.Chromosome" />
+      <property name="lis-genome.includes" value="README.CDC_Redberry.gnm2.7C5P.yml,lencu.CDC_Redberry.gnm2.7C5P.genome_main.fna.gz" />
+      <property name="src.data.dir" location="/data/v2/Lens/culinaris/genomes/CDC_Redberry.gnm2.7C5P"/>
     </source>
     <!-- Lens/ervoides/genomes/IG_72815.gnm1.ZDWF -->
     <source name="IG_72815.gnm1.ZDWF" type="lis-genome" dump="true">
@@ -39,51 +34,37 @@
       <property name="lis-genome.includes" value="README.IG_72815.gnm1.ZDWF.yml,lener.IG_72815.gnm1.ZDWF.genome_main.fna.gz" />
       <property name="src.data.dir" location="/data/v2/Lens/ervoides/genomes/IG_72815.gnm1.ZDWF"/>
     </source>
+
+    <!-- Lens/culinaris/annotations/CDC_Redberry.gnm2.ann1.5FB4 -->
+    <source name="CDC_Redberry.gnm2.ann1.5FB4" type="lis-annotation" dump="true">
+      <property name="dataSetUrl" value="https://data.legumeinfo.org/Lens/culinaris/annotations/CDC_Redberry.gnm2.ann1.5FB4/" />
+      <property name="src.data.dir" location="/data/v2/Lens/culinaris/annotations/CDC_Redberry.gnm2.ann1.5FB4"/>
+    </source>
     <!-- Lens/ervoides/annotations/IG_72815.gnm1.ann1.R90F -->
     <source name="IG_72815.gnm1.ann1.R90F" type="lis-annotation" dump="true">
       <property name="dataSetUrl" value="https://data.legumeinfo.org/Lens/ervoides/annotations/IG_72815.gnm1.ann1.R90F/" />
       <property name="src.data.dir" location="/data/v2/Lens/ervoides/annotations/IG_72815.gnm1.ann1.R90F"/>
     </source>
+    
+    <!-- ############### ONTOLOGIES etc. ############### -->
 
-    <!-- TEMP FOR PATHWAYS -->
-    <!-- Medicago/truncatula/annotations/A17_HM341.gnm4.ann2.G3ZY -->
-    <source name="A17_HM341.gnm4.ann2.G3ZY" type="lis-annotation" dump="true">
-      <property name="dataSetUrl" value="https://data.legumeinfo.org/Medicago/truncatula/annotations/A17_HM341.gnm4.ann2.G3ZY/" />
-      <property name="src.data.dir" location="/data/v2/Medicago/truncatula/annotations/A17_HM341.gnm4.ann2.G3ZY"/>
+    <!-- sequence ontology -->
+    <source name="so" type="so">
+      <property name="src.data.file" location="/data/SO-Ontologies/Ontology_Files/so-simple.obo"/>
     </source>
     
-    
-    <!-- ############### -->
-    <!-- ONTOLOGIES ETC. -->
-    <!-- ############### -->
-    
-    <!-- LIS gene families -->
-    <source name="legume.genefam.fam1.M65K" type="lis-genefamily" dump="true">
-      <property name="dataSetName" value="legume.genefam.fam1.M65K"/>
-      <property name="dataSetUrl" value="https://data.legumeinfo.org/LEGUMES/Fabaceae/genefamilies/legume.genefam.fam1.M65K/" />
-      <property name="dataSetDescription" value="LIS gene families"/>
-      <property name="src.data.dir" location="/data/v2/LEGUMES/Fabaceae/genefamilies/legume.genefam.fam1.M65K"/>
-    </source>
-
-    <!-- LIS gene family trees -->
-    <source name="legume.genefam.fam1.M65K.trees_ML_rooted" type="lis-phylotree" dump="true">
-      <property name="dataSetName" value="legume.genefam.fam1.M65K.trees_ML_rooted"/>
-      <property name="dataSetUrl" value="https://data.legumeinfo.org/LEGUMES/Fabaceae/genefamilies/legume.genefam.fam1.M65K/legume.genefam.fam1.M65K.trees_ML_rooted/" />
-      <property name="dataSetDescription" value="LIS gene family phylogenetic trees"/>
-      <property name="src.data.dir" location="/data/v2/LEGUMES/Fabaceae/genefamilies/legume.genefam.fam1.M65K/legume.genefam.fam1.M65K.trees_ML_rooted"/>
+    <!-- gene ontology -->
+    <source name="go" type="go">
+      <property name="src.data.file" location="/data/gene-ontology/go-basic.obo"/>
     </source>
 
     <!-- INTERPRO -->
     <source name="interpro" type="interpro">
-      <property name="data.source.name" value="InterPro"/>
-      <property name="data.source.description" value="XML file listing each InterPro entry."/>
-      <property name="data.source.url" value="ftp://ftp.ebi.ac.uk/pub/databases/interpro/"/>
       <property name="src.data.dir" location="/data/InterPro/"/>
     </source>
+
+    <!-- InterPro2GO -->
     <source name="interpro-go" type="interpro-go">
-      <property name="data.source.name" value="InterPro2GO"/>
-      <property name="data.source.description" value="Mappings of InterPro entries to Gene Ontology (GO) terms."/>
-      <property name="data.source.url" value="ftp://ftp.ebi.ac.uk/pub/databases/interpro/"/>
       <property name="src.data.dir" location="/data/InterPro/ontology/"/>
     </source>
 
@@ -97,33 +78,27 @@
       <property name="src.data.dir" location="/data/PANTHER/"/>
     </source>
     
-    <!-- plant ontology -->
-    <source name="plant-ontology" type="obo">
-      <property name="src.data.file" location="/data/plant-ontology/po.obo"/>
-      <property name="ontology.prefix" value="PO"/>
-      <property name="obo.ontology.name" value="Plant Ontology"/>
-      <property name="obo.ontology.url" value="http://planteome.org/" />
-      <property name="obo.ontology.licence" value="https://creativecommons.org/licenses/by/4.0/" />
-      <property name="obo.ontology.description" value="The Plant Ontology (PO) is a community resource consisting of standardized terms, definitions, and logical relations describing plant structures and development stages, augmented by a large database of annotations from genomic and phenomic studies."/>
+    <!-- LEGUMES/Fabaceae/genefamilies/legume.genefam.fam1.M65K/ -->
+    <source name="legume.genefam.fam1.M65K" type="lis-genefamily" dump="true">
+      <property name="dataSetName" value="legume.genefam.fam1.M65K"/>
+      <property name="dataSetUrl" value="https://data.legumeinfo.org/LEGUMES/Fabaceae/genefamilies/legume.genefam.fam1.M65K/" />
+      <property name="dataSetDescription" value="LIS gene families"/>
+      <property name="src.data.dir" location="/data/v2/LEGUMES/Fabaceae/genefamilies/legume.genefam.fam1.M65K"/>
     </source>
 
-    <!-- gene ontology -->
-    <source name="go" type="go">
-      <property name="src.data.file" location="/data/gene-ontology/go-basic.obo"/>
-    </source>
-
-    <!-- sequence ontology -->
-    <source name="so" type="so">
-      <property name="src.data.file" location="/data/SO-Ontologies/Ontology_Files/so-simple.obo"/>
+    <!-- LEGUMES/Fabaceae/genefamilies/legume.genefam.fam1.M65K/legume.genefam.fam1.M65K.trees_ML_rooted/ -->
+    <source name="legume.genefam.fam1.M65K.trees_ML_rooted" type="lis-phylotree" dump="true">
+      <property name="dataSetName" value="legume.genefam.fam1.M65K.trees_ML_rooted"/>
+      <property name="dataSetUrl" value="https://data.legumeinfo.org/LEGUMES/Fabaceae/genefamilies/legume.genefam.fam1.M65K/legume.genefam.fam1.M65K.trees_ML_rooted/" />
+      <property name="dataSetDescription" value="LIS gene family phylogenetic trees"/>
+      <property name="src.data.dir" location="/data/v2/LEGUMES/Fabaceae/genefamilies/legume.genefam.fam1.M65K/legume.genefam.fam1.M65K.trees_ML_rooted"/>
     </source>
 
   </sources>
 
-  <!-- ############### -->
-  <!-- post-processing -->
-  <!-- ############### -->
   
   <post-processing>
+
     <!-- IM CORE -->
     <post-process name="do-sources" />
     <post-process name="create-utr-references"/>
@@ -146,6 +121,7 @@
     <post-process name="summarise-objectstore" />
     <post-process name="create-autocomplete-index" />
     <post-process name="create-search-index" />
+
   </post-processing>
 
 </project>

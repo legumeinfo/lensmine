@@ -28,7 +28,7 @@ dependencies {
 }
 
 dbModelConfig {
-    mineName = "lentilmine"
+    mineName = "lensmine"
     objectStoreName = "os.production"
     modelName = "genomic"
     defaultInterminePropertiesFile = "default.intermine.production.properties"
